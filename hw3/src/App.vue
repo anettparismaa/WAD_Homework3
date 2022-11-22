@@ -5,15 +5,15 @@
       <TopBar />
     </header>
       <router-view />
-    <Footer />
   </div>
+  <FooterBar />
 </template>
 
 <script>
   import TopBar from './components/TopBar.vue'
   import SideBar from './components/SideBar.vue'
   import SideBarR from './components/SideBarR.vue'
-  import Footer from './components/Footer.vue'
+  import FooterBar from './components/Footer.vue'
   import SignUp from './views/SignUpView.vue'
 
 export default {
@@ -21,7 +21,7 @@ export default {
     components: {
       TopBar,
       SideBar,
-      Footer,
+      FooterBar,
       SignUp,
       SideBarR
     }
@@ -35,7 +35,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f2f2f2;
   height: 100vh;
 }
 body, html{

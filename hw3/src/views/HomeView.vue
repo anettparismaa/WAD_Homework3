@@ -11,7 +11,9 @@
       <aside>
       </aside>
   </div>
+  <b-button @click="count=0">Reset likes</b-button>
 </template>
+
 <script>
 import ProductCompoTwo from "@/components/ProductCompoTwo.vue";
 
@@ -103,4 +105,27 @@ aside {
 main {
     width: 60%;
 }
+body{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+b-button {
+    padding: 1rem 4rem;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: rgba(85, 85, 85, 0.502);
+    border: none;
+    color: #f2f2f2;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  b-button:hover {
+    background-color: hwb(141 53% 16% / 0.758);
+    transition: background-color 0.25s linear;
+  }
 </style>
