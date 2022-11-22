@@ -12,6 +12,7 @@
       </aside>
   </div>
 </template>
+
 <script>
 import ProductCompoTwo from "@/components/ProductCompoTwo.vue";
 

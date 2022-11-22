@@ -1,6 +1,7 @@
 <template>
     <div class="signup">
       <div id="login">
+        <br>
             <b>Welcome to postIt</b>
             <p>Create an account</p>
             <p>or</p>
@@ -17,13 +18,14 @@
 <style scoped>
   .signup {
     display: inline-block;
-    width: 40%;
+    width: 50%;
     align-items: center;
-    padding-top: 2%;
+    padding-top: 5%;
   }
 
   #login {
     background-color: rgb(152, 152, 152);
+    overflow: hidden;
   }
   input{
     box-sizing: border-box;
