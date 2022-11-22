@@ -5,10 +5,8 @@
       <TopBar />
     </header>
       <router-view />
-    <footer>
-      <FooterBar />
-    </footer>
   </div>
+  <FooterBar />
 </template>
 
 <script>

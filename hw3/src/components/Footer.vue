@@ -13,7 +13,7 @@
   <style scoped>
   
   .footer {
-    position: absolute;
+    position: fixed;
     background-color: rgb(85,85,85, 0.502);
     bottom: 0;
     height: 10%;
@@ -24,7 +24,6 @@
   p {
     color: #f2f2f2;
     font-weight: bold;
-    font-size: 15px;
   }
 
   </style>

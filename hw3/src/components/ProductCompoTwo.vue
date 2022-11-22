@@ -6,9 +6,13 @@
                 <p class="date"> {{ post.date }} </p></header>
             <div class="postImg"><img class="image" :src="post.image" /></div>
             <div class="post"><p class="text">{{ post.text }} </p></div>
-            <footer></footer>
+            <footer>
+                <b-button id="like" @click="count++">Like</b-button>
+                <p id="likes">{{ count }} likes</p>
+            </footer>
             
         </article>
+        
     </div>
 </template>
     
@@ -23,6 +27,12 @@ export default {
     },
     computed: {
 
+    },
+    data() {
+    return {
+        count: 0
+    }
+    
     }
 }
 </script>
@@ -98,5 +108,27 @@ article header{
 .post{
 
 }
+
+#like {
+    float: left;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: rgba(85, 85, 85, 0.502);
+    border: none;
+    color: #f2f2f2;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#like:hover {
+    background-color: hwb(141 53% 16% / 0.758);
+    transition: background-color 0.25s linear;
+}
+
+
 
 </style>

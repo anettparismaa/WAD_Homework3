@@ -11,7 +11,7 @@
       <aside>
       </aside>
   </div>
-  <b-button @click="">Reset likes</b-button>
+  <b-button @click="count=0">Reset likes</b-button>
 </template>
 
 <script>
@@ -104,6 +104,11 @@ aside {
 }
 main {
     width: 60%;
+}
+body{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 b-button {
