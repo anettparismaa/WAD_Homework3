@@ -1,6 +1,6 @@
 <template>
-  <div class="signup">
-    <div id="login" v-cloak>
+	<div class="signup">
+		<div id="login" v-cloak>
 
       <h2>Sign up</h2>
        <form action="index.html">
@@ -11,23 +11,23 @@
                 <br><input type="submit" class="login" value="Sign up"><br>
             </form>
 
-<transition name="req" appear>
-  <div v-if='passwordValidation.errors.length > 0 && !submitted' class='req'>
-    <h2>Requierments</h2>
-    <p v-for='error in passwordValidation.errors'>{{error}}</p>
-  </div>
-</transition>
-  </div>
+			<transition name="req" appear>
+				<div v-if='passwordValidation.errors.length > 0 && !submitted' class='req'>
+					<h2>Requirements</h2>
+					<p v-for='error in passwordValidation.errors' :key="error">{{ error }}</p>
+				</div>
+			</transition>
+		</div>
 
-</div>
+	</div>
 </template>
 <style scoped>
 .signup {
-  display: inline-block;
-  width: 40%;
-  align-items: center;
-  padding-top: 2%;
-  padding-bottom: 3%;
+	display: inline-block;
+	width: 40%;
+	align-items: center;
+	padding-top: 2%;
+	min-height: 80.7vh;
 }
 
 
@@ -52,37 +52,38 @@ input{
   box-sizing: border-box;
   max-width: 100%;
 }
+
 .req {
-	max-width:400px;
-	padding:1em;
-	margin: 1em 0;
+	max-width: 400px;
+	padding: 1em;
+	margin: 0 auto;
 	font-size: .9em;
 	color:darken(#D4DEDF, 50%);
-  align-items: center;
+  	align-items: center;
 }
 </style>
 
 <script>
 export default {
-	el:"#login",
-	data () {
+	el: "#login",
+	data() {
 		return {
 			rules: [
 				{ message:'One lowercase letter required.', regex:/[a-z]+/ },
 				{ message:"One uppercase letter required.",  regex:/[A-Z]+/ },
 				{ message:"8 characters minimum, 15 max", regex:/.{8,15}/ },
 				{ message:"One number required.", regex:/[0-9]+/ },
-        { message:"_ required.", regex:/^(?=.*_)+/ },
-        { message:"First letter uppercase", regex:/^[A-Z]/}
+        		{ message:"_ required.", regex:/^(?=.*_)+/ },
+        		{ message:"First letter uppercase", regex:/^[A-Z]/}
 			],
-			password:'',
-			checkPassword:'',
-			submitted:false
+			password: '',
+			checkPassword: '',
+			submitted: false
 		}
 	},
 
 	computed: {
-		passwordValidation () {
+		passwordValidation() {
 			let errors = []
 			for (let condition of this.rules) {
 				if (!condition.regex.test(this.password)) {
@@ -90,12 +91,12 @@ export default {
 				}
 			}
 			if (errors.length === 0) {
-				return { valid:true, errors }
+				return { valid: true, errors }
 			} else {
-				return { valid:false, errors }
+				return { valid: false, errors }
 			}
 		}
 	}
 }
-	
+
 </script>
