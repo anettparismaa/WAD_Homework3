@@ -35,10 +35,7 @@
   background-color: rgb(152, 152, 152);
   max-width:600px;
 	margin: 0 auto;
-}
-
-[v-cloak] {
-	opacity:0;
+  border-radius: 2%
 }
 
 .req {

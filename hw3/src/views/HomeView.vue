@@ -106,6 +106,18 @@ main {
     width: 60%;
 }
 
+.item {
+  border-radius: 2%;
+}
+
+.profileimage {
+    height: auto;
+    width: auto;
+    float: right;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 5px;
+}
 
 b-button {
     padding: 1rem 4rem;
