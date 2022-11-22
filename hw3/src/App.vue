@@ -4,11 +4,9 @@
     <header>
       <TopBar />
     </header>
-    <SideBar />
     <main>
       <router-view />
     </main>
-    <SideBarR />
     <footer>
       <Footer />
     </footer>

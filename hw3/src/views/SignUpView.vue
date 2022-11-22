@@ -17,12 +17,12 @@
 <style scoped>
   .signup {
     display: inline-block;
-    background-color: gainsboro;
     width: 40%;
+    align-items: center;
+    padding-top: 2%;
   }
 
   #login {
-    background-color: black;
-    display: inline-block;
+    background-color: rgb(152, 152, 152);
   }
 </style>
