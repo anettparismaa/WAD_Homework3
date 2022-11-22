@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import ProductCompoTwo from "@/components/ProductCompoTwo.vue";
+import ProductCompoTwo from "@/components/Posts.vue";
 
 export default {
   name: "PostCompo",
