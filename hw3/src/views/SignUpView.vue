@@ -1,44 +1,83 @@
 <template>
-    <div class="signup">
-      <div id="login">
-        <br>
-            
-            <form action="index.html">
-                <p>Email: </p>
+  <div class="signup">
+    <div id="login" v-cloak>
+
+      <h2>Sign up</h2>
+       <form action="index.html">
                 <input type="email" name="Email" placeholder="Email" required><br>
-                <p>Password: </p>
-                <input type="password" placeholder="Password" required><br>
-                <input type="submit" class="login" value="Singup"><br>
+                <div class="password">
+  <input :class='{valid:passwordValidation.valid}' :type="passwordVisible ? 'text' :  'password'" v-model="password" pattern="^(?=.*_)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$_!%*?&])[A-Za-z\d@$_!%*?&]{8,15}$" placeholder="Password" required></div>
+                <br><input type="submit" class="login" value="Sign up"><br>
             </form>
-        </div>
-    </div>
+
+<transition name="req" appear>
+  <div v-if='passwordValidation.errors.length > 0 && !submitted' class='req'>
+    <h2>Requierments</h2>
+    <p v-for='error in passwordValidation.errors'>{{error}}</p>
+  </div>
+</transition>
+  </div>
+
+</div>
 </template>
 <style scoped>
-  .signup {
-    display: inline-block;
-    width: 50%;
-    align-items: center;
-    padding-top: 5%;
-  }
+.signup {
+  display: inline-block;
+  width: 40%;
+  align-items: center;
+  padding-top: 2%;
+}
 
-  #login {
-    background-color: rgba(85, 85, 85, 0.502);
-    overflow: hidden;
-  }
-  .login {
-    margin-top: 1%;
-    margin-bottom: 2%;
-  }
-
-  input{
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  p{
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 10px;
-    font-weight: bold;
-  }
+#login {
+  background-color: rgb(152, 152, 152);
+}
+input{
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.req {
+	max-width:400px;
+	padding:1em;
+	margin: 1em 0;
+	font-size: .9em;
+	color:darken(#D4DEDF, 50%);
+}
 </style>
+
+<script>
+export default {
+	el:"#login",
+	data () {
+		return {
+			rules: [
+				{ message:'One lowercase letter required.', regex:/[a-z]+/ },
+				{ message:"One uppercase letter required.",  regex:/[A-Z]+/ },
+				{ message:"8 characters minimum, 15 max", regex:/.{8,15}/ },
+				{ message:"One number required.", regex:/[0-9]+/ },
+        { message:"_ required.", regex:/^(?=.*_)+/ },
+        { message:"First letter uppercase", regex:/^[A-Z]+[a-zA-Z]*$/}
+			],
+			password:'',
+			checkPassword:'',
+			submitted:false
+		}
+	},
+
+	computed: {
+		passwordValidation () {
+			let errors = []
+			for (let condition of this.rules) {
+				if (!condition.regex.test(this.password)) {
+					errors.push(condition.message)
+				}
+			}
+			if (errors.length === 0) {
+				return { valid:true, errors }
+			} else {
+				return { valid:false, errors }
+			}
+		}
+	}
+}
+	
+</script>
