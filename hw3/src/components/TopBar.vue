@@ -14,7 +14,7 @@
   </script>
   <style scoped>
     .topnav {
-      background-color: rgb(85, 85, 85);
+      background-color: rgba(85, 85, 85, 0.502);
       overflow: hidden;
       display: flex;
     }
@@ -29,15 +29,17 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 10px;
       border-radius: 0.25em;
       margin-right: .25rem;
       font-weight: bold;
     }
     /* Change the color of links on hover */
     .topnav a:hover {
-      background-color: #ddd;
-      color: black;
+      background-color: hwb(141 53% 16% / 0.758);
+      transition: background-color 0.25s linear;
     }
     /* Add a color to the active/current link */
     .topnav a.active {

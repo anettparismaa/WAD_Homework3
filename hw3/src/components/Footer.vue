@@ -12,17 +12,19 @@
 </script>
   <style scoped>
   
-  footer {
+  .footer {
     position: absolute;
-    background-color: rgb(85,85,85);
+    background-color: rgb(85,85,85, 0.502);
     bottom: 0;
-    height: 8%;
+    height: 10%;
     width: 100%;
     border-radius: 0.25em;
   }
 
   p {
     color: #f2f2f2;
+    font-weight: bold;
+    font-size: 15px;
   }
 
   </style>

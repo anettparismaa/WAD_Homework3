@@ -113,14 +113,14 @@ b-button {
     font-size: 10px;
     text-transform: uppercase;
     cursor: pointer;
-    background: #344cb7;
+    background: rgba(85, 85, 85, 0.502);
     border: none;
-    color: #fff;
+    color: #f2f2f2;
     font-weight: bold;
     letter-spacing: 1px;
   }
   b-button:hover {
-    background-color: rgba(82, 172, 113, 0.489);
-    transition: background-color 0.5s linear;
+    background-color: hwb(141 53% 16% / 0.758);
+    transition: background-color 0.25s linear;
   }
 </style>

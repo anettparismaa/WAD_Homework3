@@ -5,7 +5,9 @@
       <TopBar />
     </header>
       <router-view />
-    <Footer />
+    <footer>
+      <FooterBar />
+    </footer>
   </div>
 </template>
 

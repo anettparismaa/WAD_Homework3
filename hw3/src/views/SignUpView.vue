@@ -2,16 +2,14 @@
     <div class="signup">
       <div id="login">
         <br>
-            <b>Welcome to postIt</b>
-            <p>Create an account</p>
-            <p>or</p>
-            <p>Please log in</p>
+            
             <form action="index.html">
+                <p>Email: </p>
                 <input type="email" name="Email" placeholder="Email" required><br>
+                <p>Password: </p>
                 <input type="password" placeholder="Password" required><br>
                 <input type="submit" class="login" value="Log in"><br>
             </form>
-            <p>Forget password</p>
         </div>
     </div>
 </template>
@@ -24,9 +22,14 @@
   }
 
   #login {
-    background-color: rgb(152, 152, 152);
+    background-color: rgba(85, 85, 85, 0.502);
     overflow: hidden;
   }
+  .login {
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+
   input{
     box-sizing: border-box;
     max-width: 100%;
