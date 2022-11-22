@@ -61,12 +61,9 @@ export default {
 }
 
 .date {
-
     font-weight: bold;
     color: hwb(141 59% 4%);
-    float: right;
-    margin: 0;
-    font-size: large;
+    margin: auto 0;
 }
 
 p#likes {
@@ -76,19 +73,18 @@ p#likes {
 }
 
 article {
-    max-width: 70%;
     margin: 0 auto;
     padding: 5em;
     background: rgb(152, 152, 152);
-    ;
     margin-bottom: 5px;
     padding: 2% 5%;
-
+    border-radius: 0.5em;
 }
 
 .postImg {
     margin: 0 auto;
     max-width: 60%;
+    max-height: 500px;
     aspect-ratio: 3/5;
     overflow: hidden;
 }
@@ -101,18 +97,26 @@ article {
 
 .profileimage {
     height: 80%;
-    float: left;
-
 }
 
 article header * {
     display: inline-block;
 }
 
+article header {
+    display: flex;
+    justify-content: space-between;
+}
+
 article header,
 article footer {
     height: 3em;
     width: 100%;
+}
+
+.text {
+    max-width: 60ch;
+    margin-inline: auto;
 }
 
 #like {

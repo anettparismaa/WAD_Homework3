@@ -13,7 +13,7 @@
 
 			<transition name="req" appear>
 				<div v-if='passwordValidation.errors.length > 0 && !submitted' class='req'>
-					<h2>Requirements</h2>
+					<h3>Requirements</h3>
 					<p v-for='error in passwordValidation.errors' :key="error">{{ error }}</p>
 				</div>
 			</transition>
@@ -23,19 +23,18 @@
 </template>
 <style scoped>
 .signup {
-	display: inline-block;
-	width: 40%;
-	align-items: center;
-	padding-top: 2%;
-	min-height: 80.7vh;
+	margin-inline: auto;
 }
 
+h2 {
+	margin-top: 0;
+}
 
 #login {
   background-color: rgb(152, 152, 152);
   max-width:600px;
-	margin: 0 auto;
-  border-radius: 2%
+  border-radius: 2%;
+  min-width: 30vw;
 }
 
 .req {
@@ -60,6 +59,8 @@ input{
 	font-size: .9em;
 	color:darken(#D4DEDF, 50%);
   	align-items: center;
+	width: 100%;
+    box-sizing: border-box;
 }
 </style>
 

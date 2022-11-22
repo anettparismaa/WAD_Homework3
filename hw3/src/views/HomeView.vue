@@ -4,7 +4,7 @@
     <aside>
     </aside>
     <main>
-      <product-compo-two :postList="postList"></product-compo-two>
+      <posts :postList="postList"></posts>
       <div v-if="loading" class="loading">Loading..</div>
       <div v-if="error" class="error">{{ error }}</div>
       <div v-if="post" class="content"></div>
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import ProductCompoTwo from "@/components/Posts.vue";
+import Posts from "@/components/Posts.vue";
 
 export default {
   name: "PostCompo",
-  components: { ProductCompoTwo },
+  components: { Posts },
   data: function () {
   },
 
