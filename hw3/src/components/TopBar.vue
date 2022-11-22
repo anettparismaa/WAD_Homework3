@@ -1,35 +1,20 @@
 <template>
     <div class="topnav">
-      <div class="menu-left">
+      <nav class="menu-left">
         <router-link :to="{name:'home'}" exact>Home</router-link>
-        <router-link :to="{name:'article1'}">Article 1</router-link>
-        <router-link :to="{name:'article2'}">Article 2</router-link>
-      </div>
-  
-      <div class="menu-right">
-        <a href="#" @click.prevent="toggleNav">Toggle Nav</a>
-        <a href="#" @click.prevent="toggleAside">Toggle Aside</a>
-      </div>
+        <router-link :to="{name:'signup'}">Sign Up</router-link>
+      </nav>
     </div>
   </template>
   
   <script>
     export default {
       name: 'top-bar',
-      methods: {
-        toggleNav () {
-          this.$eventHub.$emit('toggle-nav')
-        },
-        toggleAside () {
-          this.$eventHub.$emit('toggle-aside')
-        }
-      }
     }
   </script>
   <style scoped>
-    /* Add a black background color to the top navigation */
     .topnav {
-      background-color: inherit;
+      background-color: rgb(85, 85, 85);
       overflow: hidden;
       display: flex;
     }

@@ -2,13 +2,13 @@
     <div class="sidebarL">
     </div>
     
-  </template>
+</template>
   
-  <script>
+<script>
     export default {
       name: 'side-bar'
     }
-  </script>
+</script>
   <style scoped>
     /* Add a black background color to the top navigation */
     .sidebarL {
@@ -18,7 +18,7 @@
       border-radius: 0.25em;
       height: 90vh;
       display: inline-block;
-      float: left;
+      float: right;
     }
   
   </style>

@@ -1,5 +1,28 @@
 <template>
     <div class="signup">
-      <h1>This is a sign up page</h1>
+      <div id="login">
+            <b>Welcome to postIt</b>
+            <p>Create an account</p>
+            <p>or</p>
+            <p>Please log in</p>
+            <form action="index.html">
+                <input type="email" name="Email" placeholder="Email" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <input type="submit" class="login" value="Log in"><br>
+            </form>
+            <p>Forget password</p>
+        </div>
     </div>
-  </template>
+</template>
+<style scoped>
+  .signup {
+    display: inline-block;
+    background-color: gainsboro;
+    width: 40%;
+  }
+
+  #login {
+    background-color: black;
+    display: inline-block;
+  }
+</style>
