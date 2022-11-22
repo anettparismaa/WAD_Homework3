@@ -1,57 +1,102 @@
 <template>
-    <div id= "comp-list-two">
-    <h1> Book list two</h1>
-    <p class="item" v-for="product in productList" :key="product.id">
-    <span class="author"> <b>Author:</b> {{product.author}} </span>
-    <span class="book"> <b>Book:</b> {{product.book}} </span> <br>
-    <span class="goodreads"> <b>Goodreads:</b> {{product.goodreads}} </span>
-    <span class="price"> Price: € {{product.price}} </span> 
-    </p>
+    <div id="comp-list">
+
+        <article class="item" v-for="post in postList" :key="post.id">
+            <header><img class="profileimage" :src="post.profileImg" />
+                <p class="date"> {{ post.date }} </p></header>
+            <div class="postImg"><img class="image" :src="post.image" /></div>
+            <div class="post"><p class="text">{{ post.text }} </p></div>
+            <footer></footer>
+            
+        </article>
     </div>
-    </template>
+</template>
     
-    
-    <script>
-    export default {
-        name: "ProductCompoTwo",
-            props: ["productList"],
-        data: function() {
-    return {
-    
-    }},
+<script>
+export default {
+    name: "PostCompo",
+    props: ["postList"],
+    data: function () {
+        return {
+
+        }
+    },
     computed: {
-    
+
     }
-    }
-    </script>
+}
+</script>
     
-    <style scoped>
-    .item{
+<style scoped>
+.item {
     background: rgb(128, 183, 235);
     margin-bottom: 5px;
-    padding: 3px 5px;}
-    #comp-list-two{
-    background: #1862c9;
-    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    padding: 3px 5px;
+}
+
+#comp-list {
+    /*background: white;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);*/
     margin-bottom: 30px;
     padding: 10px 20px;
-    }
-    #comp-list-two ul{
+}
+
+#comp-list ul {
     padding: 0;
     list-style-type: none;
-    }
-    #comp-list-two li{
+}
+
+#comp-list li {
     margin-right: 10px;
     margin-top: 10px;
     padding: 20px;
-    background: rgba(255,255,255,0.7);
-    }
-    .price{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.date {
     font-weight: bold;
     color: #860CE8;
-    display: block;
-    }
-    span{
+    float: right;
+    margin: 0;
+}
+
+p {
     margin-right: 10px;
-    }
-    </style>
+}
+
+article {
+    max-width: 70%;
+    margin: 0 auto;
+
+}
+
+.postImg {
+    margin: 0 auto;
+    max-width: 60%;
+    aspect-ratio: 3/5;
+    overflow: hidden;
+}
+
+.postImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profileimage{
+    height: 100%;
+    float: left;
+    
+}
+article header *{
+    display: inline-block;
+}
+article header{
+    height: 3em;
+    width: 100%;
+}
+
+.post{
+
+}
+
+</style>

@@ -3,7 +3,7 @@
       <aside>
       </aside>
       <main>
-        <product-compo-two :productList="productList"></product-compo-two>
+        <product-compo-two :postList="postList"></product-compo-two>
           <div v-if="loading" class="loading">Loading..</div>
           <div v-if="error" class="error">{{ error }}</div>
           <div v-if="post" class="content"></div>
@@ -16,15 +16,15 @@
 import ProductCompoTwo from "@/components/ProductCompoTwo.vue";
 
 export default {
-name: "Products",
+name: "PostCompo",
 components: {ProductCompoTwo },
 data: function() {
 return {
-productList:[
-{id: 1, author: "Charlotte Bronte", book: "Jane Eyre", goodreads: "4.1/5", price: 20},
-{id: 2, author: "Margaret Mitchell", book: "Gone with the Wind", goodreads: "4.3/5", price: 22},
-{id: 3, author: "Anthony Burgess", book: "A Clockwork Orange", goodreads: "4/5", price: 13},
-{id: 4, author: "Fyodor Dostoevsky" , book: "Crime and Punishment", goodreads: "4.2/5", price: 18}
+postList:[
+{id: 1, profileImg: require("@/assets/profile.png"), image: require("@/assets/img1.jpg"),text: "Charlotte Bronte", date: "1 Feb 2022"},
+{id: 2, profileImg: require("@/assets/profile.png"), image: require("@/assets/img2.jpg"), text: "Margaret Mitchell", date: "1 Feb 2021"},
+{id: 3, profileImg: require("@/assets/profile.png"), image: require("@/assets/img3.jpg"), text: "Anthony Burgess", date: "1 Feb 2020"},
+{id: 4, profileImg: require("@/assets/profile.png"), image: require("@/assets/img5.jpg"), text: "Fyodor Dostoevsky", date: "1 Feb 2019"}
 ]}},
 
 methods: {
@@ -33,8 +33,8 @@ IncreasePrice: function() {
     When using the strict mode in the vuex store, we cannot mutate state outside mutation handlers.
     Therefore, using the following function will produce an error
     
-    this.$store.state.productList.forEach(product => {
-        product.price += 1;
+    this.$store.state.postList.forEach(product => {
+        product.date += 1;
         }) 
     */
 },
