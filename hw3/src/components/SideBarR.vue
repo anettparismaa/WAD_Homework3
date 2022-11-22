@@ -18,7 +18,6 @@
       border-radius: 0.25em;
       height: 90vh;
       display: inline-block;
-      float: right;
     }
   
   </style>

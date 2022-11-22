@@ -1,6 +1,7 @@
 <template>
-    <div class="footer">
-    </div>
+    <footer>
+
+    </footer>
     
 </template>
   
@@ -11,7 +12,7 @@
 </script>
   <style scoped>
   
-  .footer {
+  footer {
     position: absolute;
     background-color: black;
   }

@@ -1,12 +1,10 @@
 <template>
-  <div id=app>
+  <div class="container">
     <!--<layout>-->
     <header>
       <TopBar />
     </header>
-    <main>
       <router-view />
-    </main>
     <Footer />
   </div>
 </template>
@@ -39,5 +37,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+}
+body, html{
+  margin: 0;
 }
 </style>
