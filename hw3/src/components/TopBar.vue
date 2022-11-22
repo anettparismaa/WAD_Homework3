@@ -44,4 +44,8 @@
       background-color: #4CAF50;
       color: white;
     }
+    .menu-left{
+      margin: 0 auto;
+      
+    }
   </style>

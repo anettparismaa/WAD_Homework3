@@ -25,4 +25,8 @@
   #login {
     background-color: rgb(152, 152, 152);
   }
+  input{
+    box-sizing: border-box;
+    width: 100%;
+  }
 </style>
