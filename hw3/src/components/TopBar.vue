@@ -1,7 +1,7 @@
 <template>
     <div class="topnav">
       <nav class="menu-left">
-        <router-link :to="{name:'home'}" exact>Home</router-link>
+        <router-link :to="{name:'home'}">Home</router-link>
         <router-link :to="{name:'signup'}">Sign Up</router-link>
       </nav>
     </div>
