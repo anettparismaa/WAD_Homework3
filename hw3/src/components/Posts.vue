@@ -66,6 +66,7 @@ export default {
     color: hwb(141 59% 4%);
     float: right;
     margin: 0;
+    font-size: large;
 }
 
 p#likes {
