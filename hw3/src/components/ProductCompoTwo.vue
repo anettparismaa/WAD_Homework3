@@ -1,18 +1,20 @@
 <template>
     <div id="comp-list">
-
-        <article class="item" v-for="post in postList" :key="post.id">
+        <article v-for="post in posts" :key="post.id">
             <header><img class="profileimage" :src="post.profileImg" />
-                <p class="date"> {{ post.date }} </p></header>
-            <div class="postImg"><img class="image" :src="post.image" /></div>
-            <div class="post"><p class="text">{{ post.text }} </p></div>
-            <footer>
-                <b-button id="like" @click="count++">Like</b-button>
-                <p id="likes">{{ count }} likes</p>
+                <p class="date"> {{ post.date }} </p>
+            </header>
+            <div class="postImg" v-if="post.image"><img class="image" :src="post.image" /></div>
+            <div class="post">
+                <p class="text">{{ post.text }} </p>
+            </div>
+            <footer class="postFooter">
+                <b-button id="like" @click="$store.commit('like', post.id)">Like</b-button>
+                <p id="likes">{{ post.likes }} likes</p>
             </footer>
-            
+
         </article>
-        
+
     </div>
 </template>
     
@@ -22,28 +24,23 @@ export default {
     props: ["postList"],
     data: function () {
         return {
-
         }
     },
     computed: {
-
+        posts() {
+            return this.$store.state.postList
+        }
     },
     data() {
-    return {
-        count: 0
-    }
-    
+        return {
+            count: 0
+        }
+
     }
 }
 </script>
     
 <style scoped>
-.item {
-    background: rgb(85, 85, 85, 0.502);
-    margin-bottom: 5px;
-    padding: 3px 5px;
-}
-
 #comp-list {
     /*background: white;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);*/
@@ -64,19 +61,27 @@ export default {
 }
 
 .date {
+
     font-weight: bold;
     color: hwb(141 59% 4%);
     float: right;
     margin: 0;
 }
 
-p {
-    margin-right: 10px;
+p#likes {
+    display: inline;
+    float: right;
+    margin: 0;
 }
 
 article {
     max-width: 70%;
     margin: 0 auto;
+    padding: 5em;
+    background: rgb(152, 152, 152);
+    ;
+    margin-bottom: 5px;
+    padding: 2% 5%;
 
 }
 
@@ -92,15 +97,19 @@ article {
     height: 100%;
     object-fit: cover;
 }
-.profileimage{
-    height: 100%;
+
+.profileimage {
+    height: 80%;
     float: left;
-    
+
 }
-article header *{
+
+article header * {
     display: inline-block;
 }
-article header{
+
+article header,
+article footer {
     height: 3em;
     width: 100%;
 }
@@ -120,11 +129,24 @@ article header{
     letter-spacing: 1px;
 }
 
+.postFooter {
+    position: relative;
+    height: 2em;
+    width: 100%;
+}
+
+.likeButton {
+    float: left;
+}
+
+.likeButton::after {
+    content: '👍 ';
+
+
+}
+
 #like:hover {
     background-color: hwb(141 53% 16% / 0.758);
     transition: background-color 0.25s linear;
 }
-
-
-
 </style>

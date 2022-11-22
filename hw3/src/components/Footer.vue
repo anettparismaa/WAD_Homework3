@@ -11,7 +11,7 @@
     }
 </script>
   <style scoped>
-  
+ 
   .footer {
     display: flex;
     background-color: rgb(85,85,85, 0.502);
@@ -23,12 +23,16 @@
   }
 
   .footer p {
-    padding-left: 45%;
+    margin-inline: auto;
   }
 
   p {
     color: #f2f2f2;
     font-weight: bold;
   }
-
-  </style>
+footer {
+  width: 100%;
+  height: 6vh;
+  background-color:  rgb(85, 85, 85);
+}
+</style>
