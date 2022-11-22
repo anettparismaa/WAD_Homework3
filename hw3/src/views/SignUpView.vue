@@ -7,6 +7,7 @@
                 <input type="email" name="Email" placeholder="Email" required><br>
                 <div class="password">
   <input :class='{valid:passwordValidation.valid}' :type="passwordVisible ? 'text' :  'password'" v-model="password" pattern="^(?=.*_)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$_!%*?&])[A-Za-z\d@$_!%*?&]{8,15}$" placeholder="Password" required></div>
+
                 <br><input type="submit" class="login" value="Sign up"><br>
             </form>
 
@@ -28,9 +29,27 @@
   padding-top: 2%;
 }
 
+
 #login {
   background-color: rgb(152, 152, 152);
+  max-width:600px;
+	margin: 0 auto;
 }
+
+[v-cloak] {
+	opacity:0;
+}
+
+.req {
+  align-self: center;
+	max-width:400px;
+	padding:1em;
+	margin: 1em 0;
+	font-size: .9em;
+	color:darken(#D4DEDF, 50%);
+  display: inline-block;
+}
+
 input{
   box-sizing: border-box;
   max-width: 100%;
@@ -41,6 +60,7 @@ input{
 	margin: 1em 0;
 	font-size: .9em;
 	color:darken(#D4DEDF, 50%);
+  align-items: center;
 }
 </style>
 
@@ -55,7 +75,7 @@ export default {
 				{ message:"8 characters minimum, 15 max", regex:/.{8,15}/ },
 				{ message:"One number required.", regex:/[0-9]+/ },
         { message:"_ required.", regex:/^(?=.*_)+/ },
-        { message:"First letter uppercase", regex:/^[A-Z]+[a-zA-Z]*$/}
+        { message:"First letter uppercase", regex:/^[A-Z]/}
 			],
 			password:'',
 			checkPassword:'',
