@@ -39,7 +39,7 @@ export default {
     
 <style scoped>
 .item {
-    background: rgb(128, 183, 235);
+    background: rgb(85, 85, 85, 0.502);
     margin-bottom: 5px;
     padding: 3px 5px;
 }
@@ -65,7 +65,7 @@ export default {
 
 .date {
     font-weight: bold;
-    color: #860CE8;
+    color: hwb(141 59% 4%);
     float: right;
     margin: 0;
 }
@@ -103,10 +103,6 @@ article header *{
 article header{
     height: 3em;
     width: 100%;
-}
-
-.post{
-
 }
 
 #like {

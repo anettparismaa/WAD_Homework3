@@ -105,11 +105,7 @@ aside {
 main {
     width: 60%;
 }
-body{
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
-}
+
 
 b-button {
     padding: 1rem 4rem;

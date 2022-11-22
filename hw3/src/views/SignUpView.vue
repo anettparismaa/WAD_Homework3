@@ -27,6 +27,7 @@
   width: 40%;
   align-items: center;
   padding-top: 2%;
+  padding-bottom: 3%;
 }
 
 
