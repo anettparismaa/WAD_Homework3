@@ -1,13 +1,12 @@
 <template>
   <div id=app>
-    <!--<layout>-->
     <header>
       <TopBar />
     </header>
     <main>
       <router-view />
     </main>
-    <Footer />
+    <FooterBar />
   </div>
 </template>
 
@@ -15,7 +14,7 @@
   import TopBar from './components/TopBar.vue'
   import SideBar from './components/SideBar.vue'
   import SideBarR from './components/SideBarR.vue'
-  import Footer from './components/Footer.vue'
+  import FooterBar from './components/Footer.vue'
   import SignUp from './views/SignUpView.vue'
 
 export default {
@@ -23,7 +22,7 @@ export default {
     components: {
       TopBar,
       SideBar,
-      Footer,
+      FooterBar,
       SignUp,
       SideBarR
     }
